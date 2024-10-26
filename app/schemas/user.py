@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional
 
 from pydantic import BaseModel, EmailStr, constr
-
+from uuid import UUID
 
 class UserCreate(BaseModel):
     email: EmailStr
@@ -19,7 +19,7 @@ class UserUpdate(BaseModel):
 class UserResponse(BaseModel):
     email: EmailStr
     username: str
-    id: int
+    id: UUID
 
     class Config:
         from_attributes = True

@@ -13,8 +13,6 @@ services:
     command: bash -c "./scripts/run.sh"
     ports:
       - "8000:8000"
-    networks:
-      - fastapi_network
     env_file:
       - .env
   db:
@@ -24,16 +22,9 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
-    networks:
-      - fastapi_network
     env_file:
       - .env
 
 volumes:
   db_data:
     driver: local
-
-networks:
-  fastapi_network:
-    driver: bridge
-    external: true

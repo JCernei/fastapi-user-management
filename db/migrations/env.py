@@ -5,6 +5,7 @@ from sqlalchemy import engine_from_config, pool
 
 from app.database import Base
 from config import settings
+from app.models.user import User
 
 DB_USER = settings.MYSQL_USER
 DB_PASSWORD = settings.MYSQL_PASSWORD
